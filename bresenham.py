@@ -14,18 +14,17 @@ def draw_line(window, color, point1, point2):
     sy = 1 if y1 < y2 else -1
     err = dx - dy
 
-    x, y = x1, y1
     while True:
-        window.set_at((x, y), color)
-        if x == x2 and y == y2:
+        window.set_at((x1, y1), color)
+        if x1 == x2 and y1 == y2:
             break
         e2 = 2 * err
         if e2 >= -dy:
             err -= dy
-            x += sx
+            x1 += sx
         if e2 <= dx:
             err += dx
-            y += sy
+            y1 += sy
 
 
 if __name__ == "__main__":
